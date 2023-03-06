@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Roboto', sans-serif;;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+  }
+  *{
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h2{
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: blue
+  }
+    .container{
+      max-width: 1400ox;
+      width: 80%;
+      margin: 0 auto;
+      a{
+        text-decoration: none;
+      }
+    }
