@@ -1,0 +1,131 @@
+@import "variable";
+.navbar{
+    height: $navbar-height;
+    background-color: #fff;
+    box-shadow: 10px 0 4px $shadow-color;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .brand{
+        color: $primary-color;
+        .brand-icon{
+            font-size: 28px;
+            display: inline-block;
+            margin-right: 8px;
+        }
+    }
+    .navigation{
+        width: 26%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 132px;
+        a{
+
+            font-size: 10px;
+            color: $dark-color;
+            transition: linear 0.3s;
+            &:hover{
+                color: $primary-color;
+                
+            }
+        }
+    }
+    .personal{
+        display: flex;
+        align-items: center;
+        .personal-img{
+            width: 30px;
+            height: 30px;
+            background-image: url("../image/avatar.jpg");
+            background-position-x: center ;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 2px solid $primary-color;
+            border-radius: 50%;
+        }  
+        .personal-dropdown{
+            position: relative;
+            cursor: pointer;;
+            .dropdown-hover{
+                display: flex;
+                align-items: center;
+                position: relative;
+                .personal-name{
+                    margin-left: 8px;
+                    color: $dark-color;
+                    font-size: 14px;
+                    font-weight: 600;
+                    
+                    
+                }
+                .drop-icon{
+                    margin-top: 4px;
+                    margin-left: 4px;
+                    display: inline-block;
+                    font-size: 22px;
+                    color: $dark-color;
+                    cursor: pointer;
+                }
+                &:hover {
+                    .personal-name ,.drop-icon{
+                        transition: linear 0.3s;
+                        color: $primary-color;
+                    }
+                   
+                }
+                .dropdown-content{
+                    display: none;
+                    position: absolute;
+                    top: calc($navbar-height - 20px);
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: #ccc;
+                    min-width: 140px;
+                    max-width: 200px;
+                    width: 160px;
+                    padding: 2px 0;
+                    box-shadow: 0px 4px 4px 0px $shadow-color;
+                    z-index: 1;
+                    a{
+                        text-align: center;
+                        display: block;
+                        width: 100%;
+                        color: $dark-color;
+                        font-size: 14px;
+                        padding: 8px 0px; 
+                        cursor: pointer;
+                        transition: linear 0.3s;
+                        &:hover{
+                            background-color: $primary-color;
+                            color: #fff;
+                        }
+                    }
+                }
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background-color: transparent;
+                    width: 140px;
+                    height: 20px;
+                    top: 34px;
+                }
+                &:hover{
+                    .dropdown-content{
+                        display: flex;
+                    }
+                }
+
+            }
+            
+            
+        }
+    display: flex;
+}
+}
+.logout-icon{
+    margin-right: 8px;
+    font-size: 13px;
+}

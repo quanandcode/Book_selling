@@ -1,0 +1,37 @@
+@import "variable";
+.list-books{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px
+}
+.book-item{
+    padding-bottom: 8px;
+    cursor: pointer;
+    .book-image{
+        width: 100%;
+        cursor: pointer;
+    }
+    .book-content{
+        text-align: left;
+        padding: 0px 8px;
+        .book-name{
+            font-weight: 500;
+            font-size: 20px;
+            color: $primary-color;
+    
+        }
+        .book-price{
+            margin-top: 12px;
+            font-size: 16px;
+            color: $bold-color;
+
+        }
+        .book-author{
+            margin-top: 12px;
+            color: $secondary-color;
+        }
+    }
+    &:hover{
+        box-shadow: 0 0 6px 0px $shadow-color;
+    }
+}

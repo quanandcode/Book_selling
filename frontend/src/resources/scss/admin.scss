@@ -1,0 +1,47 @@
+@import 'variable';
+h3{
+    color: $dark-color;
+}
+
+.admin-handle{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.table-books{
+    margin-top: 16px;
+    width: 100%;
+    border-collapse: collapse;
+    tr{
+
+        th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 8px;
+            background-color: $bold-color;
+            color: white;
+            text-align: start;
+            border: 1px solid #ddd
+        }
+        td{
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+    }
+}
+
+.form-create-book{
+    margin-top: 16px;
+    input{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button{
+        width: 100%;
+    }
+}

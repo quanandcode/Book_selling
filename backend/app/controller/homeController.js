@@ -16,6 +16,7 @@ class homeController {
       const book = await Book.create({ name, description, image });
       res.status(200).json(book);
     } catch (err) {
+      console.log(err);
       res.status(400).json({ err: err.mesage });
     }
   }
