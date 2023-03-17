@@ -18,7 +18,7 @@ const Home = () => {
     fetchAllBook();
   }, []);
   return (
-    <div className="container container-book">
+    <div className="container out-navbar">
       <div className="list-books">
         {books && books.map((book) => <Book key={book._id} book={book}></Book>)}
       </div>

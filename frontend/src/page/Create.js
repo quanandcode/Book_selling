@@ -1,11 +1,12 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import uploadCloudinary from "../service/uploads/uploadCloudinary";
 const Create = () => {
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const [imageSelected, setImageSelected] = useState("");
   const [error, setError] = useState(null);
   const [messageSuccess, setMessageSuccess] = useState(null);
   const book = {
@@ -17,6 +18,10 @@ const Create = () => {
   };
   const creatBook = async (e) => {
     e.preventDefault();
+    const uploadData = new FormData();
+    uploadData.append("image", imageSelected, "file");
+    const fileData = await uploadCloudinary(uploadData);
+    book.image = fileData.path;
     const response = await fetch("http://localhost:4000/admin/create/book", {
       method: "POST",
       body: JSON.stringify(book),
@@ -39,9 +44,8 @@ const Create = () => {
       setMessageSuccess("Bạn đã thêm sách thành công");
     }
   };
-
   return (
-    <div className="container">
+    <div className="container out-navbar">
       <form onSubmit={creatBook} className="form-create-book">
         <label>
           Tên sách
@@ -78,9 +82,8 @@ const Create = () => {
         <label>
           Ảnh bìa sách
           <input
-            onChange={(e) => setImage(e.target.value)}
-            value={image}
-            type="text"
+            onChange={(e) => setImageSelected(e.target.files[0])}
+            type="file"
           />
         </label>
         <button className="btn" type="submit" value="Submit">

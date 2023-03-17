@@ -1,7 +1,7 @@
 @import "variable";
 .list-books{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px
 }
 .book-item{
@@ -18,7 +18,11 @@
             font-weight: 500;
             font-size: 20px;
             color: $primary-color;
-    
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
         }
         .book-price{
             margin-top: 12px;

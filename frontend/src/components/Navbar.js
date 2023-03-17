@@ -32,13 +32,13 @@ const Navbar = () => {
           <div className="personal">
             <div className="personal-img"></div>
 
-            <div class="personal-dropdown">
+            <div className="personal-dropdown">
               <div className="dropdown-hover">
                 <p className="personal-name">Quân Nguyễn</p>
                 <div className="drop-icon">
                   <RiArrowDropDownLine></RiArrowDropDownLine>
                 </div>
-                <div class="dropdown-content">
+                <div className="dropdown-content">
                   <Link to="/admin/stored/books">Quản lý sách đã đăng</Link>
                   <Link to="#">Thông tin tài khoản</Link>
                   <Link to="#">

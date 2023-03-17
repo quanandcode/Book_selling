@@ -1,8 +1,12 @@
-@import 'variable';
+@import '../variable';
+@import './modalDelete.scss';
 h3{
     color: $dark-color;
 }
 
+.container-admin{
+    margin-top: 20px !important;
+}
 .admin-handle{
     display: flex;
     justify-content: center;
@@ -30,7 +34,9 @@ h3{
         }
     }
 }
-
+.destroy-book{
+    margin-left: 8px;
+}
 .form-create-book{
     margin-top: 16px;
     input{

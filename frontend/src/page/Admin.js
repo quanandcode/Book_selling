@@ -20,7 +20,7 @@ const Admin = () => {
     fetchBooks();
   }, []);
   return (
-    <div className="container">
+    <div className="container out-navbar">
       <h3>Danh sách các đầu sách đang bán</h3>
       <div className="admin-handle">
         <Link to="/admin/create/book">

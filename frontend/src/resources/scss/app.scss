@@ -4,7 +4,7 @@
   box-sizing: border-box
 }
 @import "variable";
-@import "./admin";
+@import "./admin/admin.scss";
 @import "./navbar";
 @import "./book";
 @import "./home";
@@ -43,14 +43,13 @@
 
   }
   .btn{
-    min-width: 100px;
+    min-width: 70px;
         min-height: 30px;
         padding: 10px 15px;
         background-color: $secondary-color; 
         color: #fff;
         text-align: center;
         font-size: 14px;
-        
         outline: none;
         border-radius: 2px;
         border-style: hidden;
@@ -61,4 +60,13 @@
             background-color: $primary-color;
         }
   }
-
+  .btn-danger{
+    background-color: #dc3545;
+    &:hover{
+      background-color: #b72834;
+      color: #fff;
+    }
+  }
+.out-navbar{
+  margin-top: calc($navbar-height + 20px);
+}

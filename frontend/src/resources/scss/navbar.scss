@@ -1,5 +1,9 @@
 @import "variable";
 .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: $navbar-height;
     background-color: #fff;
     box-shadow: 10px 0 4px $shadow-color;
