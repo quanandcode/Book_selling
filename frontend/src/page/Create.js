@@ -21,7 +21,7 @@ const Create = () => {
     const uploadData = new FormData();
     uploadData.append("image", imageSelected, "file");
     const fileData = await uploadCloudinary(uploadData);
-    book.image = fileData.path;
+    book.image = { url: fileData.path, filename: fileData.filename };
     const response = await fetch("http://localhost:4000/admin/create/book", {
       method: "POST",
       body: JSON.stringify(book),

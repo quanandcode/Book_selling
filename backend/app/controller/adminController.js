@@ -1,5 +1,5 @@
 const Book = require("../model/Book");
-
+const cloudinary = require("cloudinary").v2;
 class adminController {
   async storedBooks(req, res) {
     try {
@@ -29,9 +29,14 @@ class adminController {
     res.json(req.file);
   }
   //   deleteBook;
-  async createBook(req, res, next) {
+  async deleteBook(req, res, next) {
     try {
+      const { filename } = req.body;
+      console.log(filename);
       const { id } = req.params;
+      if (filename) {
+        await cloudinary.uploader.destroy(filename);
+      }
       const book = await Book.deleteOne({ _id: id });
       res.status(200).json(book);
     } catch (err) {

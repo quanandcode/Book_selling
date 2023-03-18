@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
+const imageShema = new Schema({
+  url: { type: String, required: true },
+  filename: { type: String, required: true },
+});
 const bookSchema = new Schema(
   {
     name: {
@@ -13,7 +17,7 @@ const bookSchema = new Schema(
       required: true,
     },
     image: {
-      type: String,
+      type: imageShema,
     },
     price: {
       type: String,

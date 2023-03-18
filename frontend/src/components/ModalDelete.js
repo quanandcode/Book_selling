@@ -1,6 +1,24 @@
 import { IoCloseSharp } from "react-icons/io5";
 
-const ModalDelete = ({ setIsOpenModal }) => {
+const ModalDelete = ({
+  setIsOpenModal,
+  idSelectedBook,
+  filenameSelectedBook,
+}) => {
+  const deleteBook = async () => {
+    setIsOpenModal(false);
+    console.log(filenameSelectedBook);
+    const response = await fetch(
+      `http://localhost:4000/admin/stored/books/${idSelectedBook}`,
+      {
+        method: "DELETE",
+        body: {
+          filename: filenameSelectedBook,
+        },
+      }
+    );
+  };
+
   return (
     <div
       className="modal"
@@ -28,7 +46,9 @@ const ModalDelete = ({ setIsOpenModal }) => {
           <button className="btn" onClick={() => setIsOpenModal(false)}>
             Huỷ bỏ
           </button>
-          <button className="btn btn-danger">Xoá Vĩnh Viễn</button>
+          <button className="btn btn-danger" onClick={deleteBook}>
+            Xoá Vĩnh Viễn
+          </button>
         </div>
       </div>
     </div>

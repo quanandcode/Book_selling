@@ -2,7 +2,13 @@ import { useState } from "react";
 import ModalDelete from "./ModalDelete";
 const AdminTable = ({ books }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
-
+  const [idSelectedBook, setIdSelectedBook] = useState("");
+  const [filenameSelectedBook, setFilenameSelectedBook] = useState("");
+  const handleDeleteBook = (book) => {
+    setFilenameSelectedBook(book.image.filename);
+    setIsOpenModal(true);
+    setIdSelectedBook(book._id);
+  };
   return (
     <div>
       <table className="table-books">
@@ -24,7 +30,7 @@ const AdminTable = ({ books }) => {
                   <button className="btn">Sửa</button>
                   <button
                     className="btn btn-danger destroy-book"
-                    onClick={() => setIsOpenModal(true)}
+                    onClick={() => handleDeleteBook(book)}
                   >
                     Xoá
                   </button>
@@ -34,7 +40,11 @@ const AdminTable = ({ books }) => {
         </tbody>
       </table>
       {isOpenModal && (
-        <ModalDelete setIsOpenModal={setIsOpenModal}></ModalDelete>
+        <ModalDelete
+          setIsOpenModal={setIsOpenModal}
+          idSelectedBook={idSelectedBook}
+          filenameSelectedBook={filenameSelectedBook}
+        ></ModalDelete>
       )}
     </div>
   );
